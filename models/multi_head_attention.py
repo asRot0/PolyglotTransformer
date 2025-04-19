@@ -41,6 +41,8 @@ class MultiHeadSelfAttention(tf.keras.layers.Layer):
 
         # Apply mask to prevent attending to future tokens
         if mask is not None:
+            mask = tf.cast(mask, dtype=tf.float32)
+            mask = tf.expand_dims(mask, axis=1)
             attention_scores += (mask * -1e9)
 
         attention_weights = tf.nn.softmax(attention_scores, axis=-1)
