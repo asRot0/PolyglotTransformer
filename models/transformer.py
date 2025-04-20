@@ -15,8 +15,13 @@ class Transformer(tf.keras.Model):
                  input_vocab_size,
                  target_vocab_size,
                  max_seq_length,
+                 source_language,
+                 target_language,
                  dropout_rate=0.1):
         super().__init__()
+
+        self.source_language = source_language
+        self.target_language = target_language
 
         # self.token_embedding_input = Embedding(input_vocab_size, embed_size)
         # self.token_embedding_target = Embedding(target_vocab_size, embed_size)
@@ -42,8 +47,8 @@ class Transformer(tf.keras.Model):
         self.final_linear = Dense(target_vocab_size, activation="softmax")
 
     def call(self, inputs, enc_padding_mask=None, dec_padding_mask=None, training=False):
-        encoder_inputs = inputs["english"]
-        decoder_inputs = inputs["bengla"]
+        encoder_inputs = inputs[self.source_language]
+        decoder_inputs = inputs[self.target_language]
 
         # Embed and add positional encoding to encoder inputs
         # enc_embed = self.token_embedding_input(encoder_inputs)
