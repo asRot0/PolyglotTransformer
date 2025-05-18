@@ -2,20 +2,12 @@
 
 > A multilingual Transformer-based Neural Machine Translation (NMT) system built with TensorFlow/Keras — modular, extendable, and production-ready.
 
----
-
-## 🧠 Overview
-
 **PolyglotTransformer** is a fully modular implementation of the Transformer architecture for sequence-to-sequence tasks, such as language translation. It supports language-specific notebooks and is designed for easy extensibility and experimentation.
 
-- ✅ Built on TensorFlow 2 & Keras  
-- 📦 Clean modular codebase under `models/`  
-- 📘 Notebook-ready workflows for multilingual translation  
-- 🌍 Supports English to Bengali, German, and more  
-
----
-
-## 📁 Folder Structure
+- Built on TensorFlow 2 & Keras  
+- Clean modular codebase under `models/`  
+- Notebook-ready workflows for multilingual translation  
+- Supports English to Bengali, German, and more  
 
 ```bash
 PolyglotTransformer/
@@ -36,9 +28,7 @@ PolyglotTransformer/
 ├── README.md                        
 ```
 
----
-
-## 🏗️ Model Architecture
+## Model Architecture
 
 - Multi-head attention
 - Position-wise feed-forward networks
@@ -46,18 +36,6 @@ PolyglotTransformer/
 - Sinusoidal or learned positional embeddings
 - Encoder–Decoder structure (as proposed in "Attention Is All You Need")
 
----
-
-## 🚀 How to Train
-
-```bash
-# In your Jupyter or Colab notebook
-model.fit(train_ds, validation_data=val_ds, epochs=30)
-```
-
-Preprocessing, vectorization, and dataset setup are already handled in the provided notebooks. You just need to load the parallel corpus.
-
----
 
 ### 🗾 Translation Demo (English ➜ Japanese)
 
@@ -82,16 +60,14 @@ Preprocessing, vectorization, and dataset setup are already handled in the provi
 
 > 📝 *Translations generated using the trained Transformer model.*
 
----
-
-## 🧩 Extend to More Languages
+## Extend to More Languages
 
 Just copy an existing notebook like `eng_to_ban.ipynb` and change:
 - The parallel corpus (`.txt`) file
 - `source_vectorization` / `target_vectorization` setup
 - Save as `eng_to_german.ipynb` or similar!
 
-#### 📚 Recommended Dataset Source
+#### Recommended Dataset Source
 
 You can download free English-to-X language sentence pairs from:
 🔗 [https://www.manythings.org/anki/](https://www.manythings.org/anki/)
@@ -103,14 +79,3 @@ Example files:
 - `eng-spa.txt` → English to Spanish
 
 Just place the downloaded `.txt` file into your project and update the `load_data()` function accordingly!
-
----
-
-## 🤝 Contributing
-
-Pull requests are welcome for:
-- New languages
-- Improvements to architecture
-- Optimizations and tooling
-
----
