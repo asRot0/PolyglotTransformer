@@ -1,4 +1,4 @@
-# 🌐 PolyglotTransformer
+# PolyglotTransformer
 
 > A multilingual Transformer-based Neural Machine Translation (NMT) system built with TensorFlow/Keras — modular, extendable, and production-ready.
 
